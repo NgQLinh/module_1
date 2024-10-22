@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(num){
+        if (num<=1){
+            return false
+        }
+        for (let i=2; i<=Math.sqrt; i++){
+            if (num%i===0) {
+                return false
+            }
+        }
+        return true; // trả về true nếu số là số nguyên tố
+    }
+    let array=[]
+    let soNuyenTo=parseInt(prompt("nhập số lượng số nguyên tố muốn nhập: "))
+    for (let i=0; i<soNuyenTo; i++) {
+        let prime
+        do {
+            prime = parseInt(prompt(`nhập số nguyên tố thừ ${i + 1}: `))
+            if (!isPrime(prime)) {
+                alert("vui lòng nhập lại số nguyên tố hợp lệ")
+            }
+        }while (!isPrime(prime))
+        array.push(prime)
+    }
+    let max= Math.max(...array)
+    let sum=array.reduce((acc, num) => acc+num, 0)
+    let average= sum/ array.length
+
+    document.write(" giá trị lớn nhát trong mảng là: "+ max + "<br>")
+    document.write(" giá trị nhỏ nhất trong mảng là: ", average)
+</script>
+</body>
+</html>

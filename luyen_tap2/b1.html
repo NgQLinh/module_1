@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=[[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [3, 10, 26, 7]]
+    // duyệt và im ra các phần tử trong mảng
+    for (let i in a){
+        document.write(`row` + i +'<br>')// in ra chỉ số hàng đầu
+        for (let j in a[i]){
+            document.write(" " + a[i][j] + '<br>')  // in ra phần tử tại hàng i, cột j
+        }
+    }
+</script>
+</body>
+</html>

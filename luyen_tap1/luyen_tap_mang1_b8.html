@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let mangSoNguyen = [];
+  for (let i = 0; i < 10; i++) {
+    let so = parseInt(prompt(`Nhập số nguyên thứ ${i + 1}: `), 10);
+    mangSoNguyen.push(so);
+  }
+  // sắp xếp mảng theo thứ tự giảm dần
+  mangSoNguyen.sort((a, b) => b-a)
+  // hiển thị mảng đã đuọc sắp xếp
+  document.write("Mảng đã được sắp xếp theo thứ tự giảm dần: ")
+  document.write(mangSoNguyen.join())
+</script>
+</body>
+</html>

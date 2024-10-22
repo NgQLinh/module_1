@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // khởi tạo mảng và nhập vào 10 phần tử
+  let mangSoNguyen=[];
+  for (let i=0; i<10; i++){
+    let so=parseInt(prompt(`Nhập số nguyên thứ ${i+1}: `), 10)
+    mangSoNguyen.push(so)
+  }
+  // nhập vào số nguyên V
+  let V=parseInt(prompt("Nhập số nguyên V: "), 10)
+  // KT xem V có trong mảng không
+  if (mangSoNguyen.includes(V)){
+    document.write(`${V} is in the array`)
+  }else {
+    document.write(`${V} is not in the array`)
+  }
+</script>
+</body>
+</html>

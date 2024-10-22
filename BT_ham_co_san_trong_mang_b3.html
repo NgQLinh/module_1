@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  str='c'
+  let upper= "The Quick Brown Fox"
+  let lower= "tHE qUICK bROWN fOX"
+  let arr= []
+
+  for (let i=0; i<str.length; i++){
+    if (upper.indexOf(str[i]) !==-1){
+      arr.push(str[i].toLowerCase())
+    }else if (lower.indexOf(str[i]) !==-1){
+      arr.push(str[i].toUpperCase())
+    }
+  }
+  document.write(arr.join(''))
+</script>
+</body>
+</html>

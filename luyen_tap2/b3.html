@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangKyTu= ['0', '1', 'b', '2', 'c', '3', 'd', '4', 'f', '5']
+    let soKyTu=0
+    for (let i=0; i< mangKyTu.length; i++){
+        //kiểm tra xem ký tự có phải là số hay không
+        if (!isNaN(mangKyTu[i]) && mangKyTu[i] !== ''){
+            soKyTu++
+        }
+    }
+    document.write("số ký tự số trong mảng: " +soKyTu)
+</script>
+</body>
+</html>

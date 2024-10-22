@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function demSoNguyenAm(chuoiDauVao) {
+    const  phanTu= chuoiDauVao.split(/\s+/); //Sử dụng regex để tách theo khoảng trắng
+    let soLuongAm=0
+    for (const element of phanTu){
+      const so= parseInt(element, 10); //chuyển đổi thành số nguyên
+      // KT xem số đó c pahỉ là số nguyên âm hay không
+      if (so<0 && !isNaN(so)){
+        soLuongAm++
+      }
+    }
+    return soLuongAm
+  }
+  const input= prompt("Nhập chuỗi số ( cách nhau bằng khoảng trắng): ")
+  const ketQua= demSoNguyenAm(input)
+  document.write(" Số lượng số nguyên âm: ", ketQua)
+</script>
+</body>
+</html>

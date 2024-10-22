@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Caro Game Simple</h1>
+<p id="carogame"></p>
+<input type="button" value="change value" onclick="changeValue()">
+</body>
+<script>
+  let b= document.getElementById('carogame')
+  let board=[]
+  let data= ""
+  for (let i=0; i<5; i++){
+    data+= "<br/>"
+    for (let j=0; j<5; j++){
+      data += board[i][j]+ "&nbsp;&nbsp"
+    }
+  }
+  data += "<br/><br/><input type='button' value='change value' onclick='changeValue()''>"
+  b.innerHTML=data
+
+  function changValue(){
+    let positionX= prompt("X: ")
+    let positionY= prompt("Y: ")
+    data= ""
+    for (let j=0; j<5; j++){
+      data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+    b.innerHTML = "<hr/>" + data;
+  }
+  function changeValue() {
+    let positionX = parseInt(prompt("Enter X (0-4): ")); // Nhập tọa độ X
+    let positionY = parseInt(prompt("Enter Y (0-4): ")); // Nhập tọa độ Y
+
+    // Kiểm tra tọa độ nhập vào có hợp lệ không
+    if (positionX >= 0 && positionX < 5 && positionY >= 0 && positionY < 5) {
+      board[positionX][positionY] = 'X'; // Thay đổi giá trị ô tại tọa độ đã nhập
+      renderBoard(); // Cập nhật lại bảng
+    } else {
+      alert("Invalid position! Please enter values between 0 and 4."); // Thông báo nếu tọa độ không hợp lệ
+    }
+  }
+
+  renderBoard(); // Hiển thị bảng lần đầu tiên
+</script>
+</html>
