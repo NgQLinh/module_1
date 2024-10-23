@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function tinhBinhPhuong(num) {
+    return num*num
+  }
+  let soCanTinh= prompt("Nhập số muốn tính: ")
+  // chuyển đổi chuỗi nhập vào thành số
+  let so= parseFloat(soCanTinh)
+  if (!isNaN(so)){
+    let keQua= tinhBinhPhuong(so)
+    document.write(`Nình phương cửa ${so} là: ${keQua}`)
+  }else {
+    document.write("Vui lòng nhập số hợp lệ!")
+  }
+</script>
+</body>
+</html>

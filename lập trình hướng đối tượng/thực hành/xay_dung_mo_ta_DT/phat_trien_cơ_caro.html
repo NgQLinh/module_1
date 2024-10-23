@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #game-board {
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .cell {
+            border: solid 1px blue;
+            text-align: center;
+            font-size: 20pt;
+            cursor: pointer;
+            color: red;
+            width: 40px; /* Kích thước ô */
+            height: 40px; /* Kích thước ô */
+            line-height: 40px; /* Căn giữa văn bản theo chiều dọc */
+            display: inline-block; /* Hiển thị ô dưới dạng khối */
+            box-sizing: border-box; /* Đảm bảo kích thước không bị ảnh hưởng bởi border */
+        }
+    </style>
+</head>
+<body>
+<script>
+    const valueEmpty = 1; // giá trị ô trống
+    const valueX = 2; // giá trị ô X
+    const valueO = 3; // giá trị ô O
+    const defaultCols = 20;
+    const defaultRows = 20;
+    const defaultCellSize = 40;
+
+    // Hàm tạo ô cơ sở
+    function O(x, y) {
+        this.x = x; // chỉ số hàng
+        this.y = y; // chỉ số cột
+        this.value = valueEmpty; // giá trị mặc định của ô
+
+        this.getHtml = function () {
+            var top = x * defaultCellSize; // tính vị trí theo chiều dọc
+            var left = y * defaultCellSize; // tính vị trí theo chiều ngang
+            return '<div id="cell-' + x + '-' + y + '" onclick="play(' + x + ',' + y + ')" class="cell" style="position: absolute; width: ' +
+                defaultCellSize + 'px; height: ' +
+                defaultCellSize + 'px; left: ' +
+                left + 'px; top: ' +
+                top + 'px; line-height: ' +
+                defaultCellSize + 'px;"></div>';
+        };
+
+        // Hàm vẽ ô
+        this.draw = function () {
+            var cellDiv = document.getElementById("cell-" + x + "-" + y); // lấy ô từ DOM
+            switch (this.value) {
+                case valueX:
+                    cellDiv.innerHTML = "X"; // hiển thị X
+                    break;
+                case valueO:
+                    cellDiv.innerHTML = "O"; // hiển thị O
+                    break;
+                default:
+                    cellDiv.innerHTML = ""; // ô trống
+                    break;
+            }
+        };
+    }
+
+    // Hàm tạo bàn cờ
+    function BanCo(rows, cols, elementId) {
+        this.rows = rows; // số hàng
+        this.cols = cols; // số cột
+        this.elementId = elementId; // Id của phần tử DOM
+        this.turn = valueO; // lượt chơi bắt đầu
+        this.cells = []; // mảng lưu ô
+        this.isOver = false; // trạng thái kết thúc
+
+        // Hàm vẽ bàn cờ
+        this.draw = function () {
+            var gameBoardDiv = document.getElementById(this.elementId);
+            gameBoardDiv.innerHTML = ""; // xóa nội dung bàn cờ cũ
+            for (let i = 0; i < this.rows; i++) {
+                var row = [];
+                this.cells.push(row);
+                for (let j = 0; j < this.cols; j++) {
+                    let cell = new O(i, j); // tạo mới ô
+                    row.push(cell);
+                    gameBoardDiv.innerHTML += cell.getHtml(); // thêm ô vào bàn cờ
+                }
+            }
+        };
+
+        // Hàm xử lý lượt chơi
+        this.play = function (x, y) {
+            if (this.isOver) return; // nếu đã kết thúc, không làm gì cả
+            var cell = this.cells[x][y];
+            if (cell.value === valueEmpty) {
+                cell.value = this.turn; // gán giá trị cho ô
+                cell.draw(); // vẽ ô
+                this.check(x, y); // kiểm tra thắng
+                // đổi lượt
+                this.turn = (this.turn === valueO) ? valueX : valueO;
+            } else {
+                alert("Ô đã được đánh dấu!"); // Cảnh báo ô đã có giá trị
+            }
+        };
+
+        // Hàm kiểm tra thắng
+        this.check = function (x, y) {
+            var cell = this.cells[x][y];
+            var directions = [[0, 1], [1, 0], [1, 1], [1, -1]]; // ngang, dọc, chéo phải, chéo trái
+
+            for (let d = 0; d < directions.length; d++) {
+                var count = 1;
+                var [dx, dy] = directions[d];
+
+                // Kiểm tra theo hướng dương
+                for (let i = 1; i < 5; i++) {
+                    let nx = x + dx * i, ny = y + dy * i;
+                    if (nx < this.rows && ny < this.cols && nx >= 0 && ny >= 0 && this.cells[nx][ny].value === cell.value) {
+                        count++;
+                    } else break;
+                }
+
+                // Kiểm tra theo hướng âm
+                for (let i = 1; i < 5; i++) {
+                    let nx = x - dx * i, ny = y - dy * i;
+                    if (nx < this.rows && ny < this.cols && nx >= 0 && ny >= 0 && this.cells[nx][ny].value === cell.value) {
+                        count++;
+                    } else break;
+                }
+
+                this.endGame(count); // kiểm tra kết thúc game
+            }
+        };
+
+        // Hàm kiểm tra kết thúc trò chơi
+        this.endGame = function (count) {
+            if (count >= 5) {
+                this.isOver = true; // Đánh dấu kết thúc
+                alert("Bạn đã thắng!!!"); // Thông báo thắng
+            }
+        };
+    }
+
+    // Hàm xử lý lượt chơi
+    function play(x, y) {
+        gameBoard.play(x, y);
+    }
+
+    // Hàm khởi động trò chơi
+    function start() {
+        gameBoard = new BanCo(defaultRows, defaultCols, "game-board");
+        gameBoard.draw();
+    }
+
+    var gameBoard; // Biến toàn cục cho bàn cờ
+    start(); // Khởi động trò chơi
+</script>
+<div id="game-board"></div>
+</body>
+</html>

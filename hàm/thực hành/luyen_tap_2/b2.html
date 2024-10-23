@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // hàm tính diện tính hình tròn
+  function tinhDienTichHinhTron(r){
+    return Math.PI*r*r
+  }
+  // hàm tính chu vi hình tròn
+  function tinhChuViHinhTron(r){
+    return 2*Math.PI*r
+  }
+  let banKinh= prompt("nhập bán kính hình tròn")
+  // chuyển đổi chuỗi nhập thành số
+  let r= parseFloat(banKinh)
+
+  if (!isNaN(r) && r > 0) {
+    let dienTich=tinhDienTichHinhTron(r)
+    let chuVi=tinhChuViHinhTron(r)
+    document.write(`diện tích hình tròn bán kính bằng ${r} là: ${dienTich.toFixed(3)}<br>`)
+    document.write(`chu vi hình tròn bán kính bằng ${r} là: ${chuVi.toFixed(3)}`)
+  }else {
+    alert("vui lòng nhập bán kính hợp lệ")
+  }
+</script>
+</body>
+</html>

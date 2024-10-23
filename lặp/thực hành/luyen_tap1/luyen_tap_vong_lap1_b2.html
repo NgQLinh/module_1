@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let nhiedo;
+  while (true){
+    nhiedo=prompt("nhập nhiệt độ hiện tại: ")
+    if (nhiedo===null){
+      alert("bạn đã huỷ nhập dữ liệu.")
+      break;
+    }
+    nhiedo= parseFloat(nhiedo)
+  if (isNaN(nhiedo)){
+    alert("vui lòng nhập số hơp lệ")
+  }else if (nhiedo>100){
+    alert("nhiệt độ quá cao! vui lòng nhập lại")
+  }else if (nhiedo<20){
+    alert("nhiệt độ thấp! vui lòng tăng nhiêt độ")
+  }else {
+    alert("nhiệt độ hiện tại là" + nhiedo + " độ.")
+    break
+  }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let chieuDai= +prompt("nhập chiều dài: ")
+    let chieuRong= +prompt("nhập chiều rông: ")
+    function inHCN(chieuDai, chieuRong){
+        for (let i= 0; i< chieuRong; i++){
+            let chieuRong= "<br>"
+            for (let j=0; j<chieuDai; j++){
+                chieuRong += "*"
+            }
+            document.write(chieuRong)
+        }
+    }
+    inHCN(chieuDai, chieuRong)
+</script>
+</body>
+</html>

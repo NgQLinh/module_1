@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ktKyTuLaSo(kyTu){
+        // kiểm tra xem ký tự có phải là 1 số không
+        return /^\d$/.test(kyTu)
+    }
+    let kyTuNhap= prompt("nhập 1 ký tự: ")
+    if (ktKyTuLaSo(kyTuNhap)){
+        alert("true")
+    }else {
+        alert("false")
+    }
+</script>
+</body>
+</html>

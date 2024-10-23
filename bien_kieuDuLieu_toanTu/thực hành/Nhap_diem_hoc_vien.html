@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập điểm học viên</title>
+</head>
+<body>
+<form>
+  <input size="20" type="number" placeholder="Nhập điểm học viên" id="diemhocvien" min="0" max="100">
+  <button type="submit" onclick="kiemtra()">Submit</button>
+</form>
+<script>
+  function kiemtra() {
+    let diemhocvien= document.getElementById("diemhocvien").valueOf()
+    if (diemhocvien >=75){
+      alert("pass module")
+    }
+    else {
+      alert("fail module")
+    }
+  }
+</script>
+
+</body>
+</html>

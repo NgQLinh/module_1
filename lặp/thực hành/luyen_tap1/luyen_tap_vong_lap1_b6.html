@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tongcacso(n){
+        let sum=0
+        let count=0
+        let nhapso=0
+        while (count<n){
+            if (nhapso %7===0){
+                sum+=nhapso
+                count++
+            }
+            nhapso++
+        }
+        return sum
+    }
+    alert(tongcacso(30))
+</script>
+</body>
+</html>

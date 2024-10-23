@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function doiCho(a, b) {
+        let temp = a
+        a=b
+        b= temp
+        return [a, b]
+    }
+    let so1= parseInt(prompt(" nhập số nguyên thứ nhất: "))
+    let so2= parseInt(prompt(" nhập số nguyên thứ hai: " ))
+    let ketQua= doiCho(so1, so2)
+    document.write("sau khi đôỉ chỗ: ", ketQua[0], ketQua[1])
+</script>
+</body>
+</html>

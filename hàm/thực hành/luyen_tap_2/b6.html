@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ktNguyenDuong(){
+        let soLuong = parseInt(prompt("nhập số lượng số cần kiểm tra: "))
+        let ketQua = []
+        for (let i=0; i< soLuong; i++){
+            // nhập từng số
+            let so= parseFloat(prompt(`nhập số tứ ${i+1}: `))
+            // kiểm tra nếu số là nguyên duong
+            if (Number.isInteger(so) && so>0){
+                ketQua.push(true)
+            }else {
+                ketQua.push(false)
+            }
+        }
+        return ketQua
+    }
+    document.write(ktNguyenDuong())
+</script>
+</body>
+</html>

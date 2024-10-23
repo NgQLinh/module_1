@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển từ độ C sang độ F</title>
+</head>
+<body>
+<script>
+
+  function celsiusToFahrenheit(celsius){
+    let fahrenheit= (celsius * 9/5) +32;
+    return fahrenheit;
+  }
+  let tempC= +prompt('nhập ộ C')
+  let tempF= celsiusToFahrenheit(tempC)
+  alert(`${tempC} °C = ${tempF} °F`)
+
+</script>
+</body>
+</html>

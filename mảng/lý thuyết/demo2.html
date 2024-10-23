@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=[98379735];
+    let input;
+    while (true) {
+        input = prompt("nhập số muốn kt. nếu nhập xong vuo lòng nhập done")
+        if (input.toLowerCase()==="done"){
+            break;
+        }else {
+            if (isNaN(input)){
+                alert("nhập sai. ko tính")
+                continue
+            }
+            arr.push(+input)
+        }
+    }
+    document.write(arr)
+</script>
+</body>
+</html>

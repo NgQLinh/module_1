@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // hàm tính giai thừa
+    function tinhGiaiThua(n) {
+       if (n<0){
+           return"giai thừa không xác định cho số âm"
+       }
+       if (n === 0 || n === 1){
+           return 1; //giai thừa cửa 0 và 1 đều  là 1
+       }
+       let giaiThua=1
+        for (let i=2; i<= n; i++){
+            giaiThua*=i; // nhân từng số từ 2 đến n
+        }
+        return giaiThua
+    }
+    let soNguyen= parseInt(prompt("nhập vào số nguyên không âm: "))
+    let ketQua=tinhGiaiThua(soNguyen)
+    document.write(`giai thừa của ${soNguyen} là: ${ketQua}`)
+
+</script>
+</body>
+</html>

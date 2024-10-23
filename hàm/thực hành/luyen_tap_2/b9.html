@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTraKyTu(mangKyTu, kyTu) {
+        if (!Array.isArray(mangKyTu) || mangKyTu.length === 0) {
+            return "Vui lòng nhập một mảng ký tự hợp lệ.";
+        }
+        let count = 0;
+        // Duyệt qua mảng để đếm số lần xuất hiện của ký tự
+        for (let i = 0; i < mangKyTu.length; i++) {
+            if (mangKyTu[i] === kyTu) {
+                count++;
+            }
+        }
+        // Kiểm tra và trả về kết quả
+        return count > 0 ? count : -1;
+    }
+    // Nhập mảng ký tự từ người dùng
+    let input = prompt("Nhập các ký tự cách nhau bằng dấu phẩy (ví dụ: a,b,c,a,d):");
+    let mangKyTu = input.split(','); // Tách chuỗi thành mảng ký tự
+    // Nhập ký tự cần kiểm tra
+    let kyTuCanTim = prompt("Nhập ký tự cần kiểm tra:");
+    let ketQua = kiemTraKyTu(mangKyTu, kyTuCanTim);
+    console.log(`Số lần xuất hiện của '${kyTuCanTim}': ${ketQua}`);
+
+</script>
+</body>
+</html>

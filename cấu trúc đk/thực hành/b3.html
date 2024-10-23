@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lớn nhất trong 3 số</title>
+</head>
+<body>
+<script>
+    let max = a;
+    let a= +prompt("nhập số a")
+    let b= +prompt("nhập số b")
+    let c= +prompt("nhập số c")
+    function findMax(a,b,c){
+      let max=a;
+      if(b>max){
+        max=b;
+      }
+      if(c>max){
+        max=c
+      }
+      return max
+    }
+    let maxNumber = findMax(a,b,c);
+    console.log("số lớn nhất là" + maxNumber)
+</script>
+</body>
+</html>

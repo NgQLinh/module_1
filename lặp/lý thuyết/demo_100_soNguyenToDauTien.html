@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // hển thi 100 số nguyên tố đầu tiên
+  //B1: cho vòng lặp chạy t 2-> ??
+  //B2: với mõi số chùng ta kiểm ta số đó có phải số nguyên tố ko
+  //B3: đếm nếu nó là số nguyên tố
+  //B4: đủ 100 thì dừng
+
+  let num=2;
+  let count=0;
+  let isPrime;
+  while (count<100){
+    isPrime= true
+    for (let i=2; i<Math.sqrt(num); i++){ //sqrt: căn bậc 2
+      if(num%i ===0){
+        isPrime= false
+        break// kết thúc vòng lặp gần nó nhất
+
+      }
+
+
+
+    }
+  }
+
+  if(isPrime){
+    document.write(`${num} là số nguyên t <br>`)
+    count++;
+  }
+  num++
+</script>
+</body>
+</html>

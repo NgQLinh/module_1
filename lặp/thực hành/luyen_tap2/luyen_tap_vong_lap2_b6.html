@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hình trái tim</title>
+  <style>
+    canvas{
+      border: 5px solid black;
+      display: block;
+      margin: 20px;
+      background-color: pink;
+
+    }
+  </style>
+</head>
+<body>
+<canvas id="heartCanvar" width="400" height="400" ></canvas>
+<script>
+  const canvas= document.getElementById('heartCanvar')
+  const ctx= canvas.getContext('2d')
+  function drawHeart() {
+    const gradient= ctx.createLinearGradient(0,0,0,400)
+    ctx.fillStyle='red'
+      ctx.fill()
+    ctx.beginPath()
+    ctx.moveTo(200,300)
+    for (let i=0; i<2 *Math.PI; i+=0.01){
+      const x = 16*Math.sin(i)**3
+      const y = 13*Math.cos(i)-5*Math.cos(2*i)-2*Math.cos(3*i)-Math.cos(4*i)
+      ctx.fillRect(200+x*10, 200-y*10,1, 1)
+      }
+
+  }
+  drawHeart()
+  ctx.fillStyle= 'red'
+  ctx.fill()
+</script>
+</body>
+</html>

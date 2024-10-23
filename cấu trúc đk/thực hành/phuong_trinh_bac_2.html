@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<script>
+  function solveQuadratic(a, b, c) {
+    let D = b * b - 4 * a * c;
+    if(D>0){
+      let x1= (-b + Math.sqrt(D)) / (2*a);
+      let x2= (-b - Math.sqrt(D)) / (2*a);
+      return `Phương trình có 2 nghiệm phân biệt: x1=${x1}, x2=${x2}`
+    }else if(D===0){
+      let x= -b/(2*a);
+      return `Nghiệm kép: x=${x}`
+    }else {
+      return 'Phương trình không có nghiệm thực'
+    }
+  }
+  let a= +prompt('nhập số a')
+  let b= +prompt('nhập số b')
+  let c= +prompt('nhập số c')
+  alert(solveQuadratic(a,b,c))
+
+</script>
+</body>
+</html>

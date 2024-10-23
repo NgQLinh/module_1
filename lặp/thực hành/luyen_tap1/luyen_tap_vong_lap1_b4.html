@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ function fibonacc(){
+     let a=0
+     let b=1
+     while (true){
+         let tong= a+b;
+         if (tong%5===0){
+             return tong
+         }
+         a=b;
+         b=tong
+     }
+ }
+ document.write(fibonacc())
+
+</script>
+</body>
+</html>

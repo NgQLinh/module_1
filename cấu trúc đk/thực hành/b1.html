@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kểm tra A chia B</title>
+</head>
+<body>
+<script>
+    function isDivisible(a, b){
+        if(b===0){
+            return false
+        }
+        return a % b ===0;
+    }
+    let a= parseInt(+prompt('nhập số a'))
+    let b= parseInt(+prompt('nhập số b'))
+    if (isDivisible(a, b)){
+        console.log(a+ "chia hêt cho " +b);
+    }else {
+        console.log(a+ "ko chia hết cho " +b)
+    }
+    document.write(a/b)
+</script>
+
+</body>
+</html>

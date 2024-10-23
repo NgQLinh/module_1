@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+- lặp: lặp đi lặp lại 1 khối lệnh công việc nào đó đến khi đk sai
+-->
+
+
+<!--
++ for: biết trước số vòng lặp: for (let i=1; i<10; i++)
+VD: let a= parseInt(+prompt("nhập số nguyên a"))
+       for (let i=1; i<=a; i++){
+          if (a%i===0){
+            console.log(i)
+          }
+     }
+ -->
+
+<!-- +while:
+
++do...while (giống while):tuy nhiên nó sẽ thực hiện trước 1 lần rồi mới so sánh điều kiện
+
+-->
+<script>
+    // kiểm ta 1 số bất kì phải số ngiuyên tố hay ko
+
+// let  a= +prompt("nhấp số cần kiểm tra( số phải là số nguyên dương):  ")
+// while (isNaN(a) || a<=0){
+//     a= +prompt("bạn nhập ko phải là số ( số phải là số nguyên dương)")
+//     }
+//     alert(a)
+    let a;
+    do{
+        a= +prompt("nhấp số cần kiểm tra( số phải là số nguyên dương):  ")
+    }while (isNaN(a) || a<=0)
+    // BTVN: hiển thị 10 số nguyên tố đầu tiên, tối ưu vòng lăp
+    // bằng cách sử dụng break và giảm số lượng vòng lăp
+
+    let sum=0
+    // thuật toán tìm ước
+    for (let i = 1; i <= a/2; i++) {
+        if (a % i === 0) {
+            sum = sum + i;
+
+        }
+    }
+
+    if(sum===a){
+        alert(` ${a} là số hoàn hảo`)
+    }else {
+        alert(`${a} ko phải số hoàn hảo`)
+    }
+
+</script>
+</body></html>
+
+
+

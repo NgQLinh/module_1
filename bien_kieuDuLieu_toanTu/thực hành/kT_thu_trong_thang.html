@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thứ mấy trong tháng</title>
+</head>
+<body>
+<h1>Kiểm tra thứ mấy trong tháng</h1>
+<form>
+  <input type="number" id="day" placeholder="Nhập số từ 1 đến 7">
+  <button onclick="KT_day()">SUBMIT</button>
+</form>
+<script>
+  function KT_day() {
+    let day= document.getElementById("day").value;
+    switch (day){
+      case '1':
+        alert("Chủ nhật");
+        break;
+      case '2':
+        alert("Thứ 2");
+        break;
+      case '3':
+        alert("Thứ 3");
+        break;
+      case '4':
+        alert("Thứ 4");
+        break;
+      case '5':
+        alert("Thứ 5");
+        break;
+      case '6':
+        alert("Thứ 6");
+        break;
+      case '7':
+        alert("Thứ 7");
+        break;
+      default:
+        alert("Vui lòng nhập số từ 1 đến 7");
+        break;
+      }
+        return false
+
+    }
+</script>
+</body>
+</html>

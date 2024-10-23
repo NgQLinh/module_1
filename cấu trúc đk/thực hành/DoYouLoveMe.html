@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DoYouLoveMe</title>
+    <style>
+        #noButton {
+            position: absolute;
+            cursor: pointer;
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url(https://i.pinimg.com/236x/88/09/de/8809dee272f35c95aadf0f5657701240.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: brightness(90%);
+            background-attachment: fixed;
+        }
+        .message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .show {
+            opacity: 1;
+        }
+        .frame {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid white;
+            padding: 50px;
+            background-image: url(https://i.pinimg.com/564x/66/fd/de/66fdde993b0300bc868bcded797f2016.jpg);
+            background-size: cover;
+            opacity: 0;
+            animation: slideIn 1s ease-in-out forwards;
+            text-align: center;
+        }
+        .frame div {
+            font-size: 100px;
+            font-weight: bold;
+            color: magenta;
+        }
+        .frame div:last-child {
+            font-size: 50px; /* Kích thước chữ nhỏ hơn cho "You're amazing!" */
+        }
+        @keyframes slideIn {
+            from {
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+        .button {
+            color: black;
+            background-color: hotpink;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="color: palevioletred">Do You Love Me :3</h1>
+<div class="message" id="message" style="color: magenta">I love you very much too <3 </div>
+<button id="yesButton" class="button" onclick="showYES()">YES</button>
+<button id="noButton" class="button">NO</button>
+
+<div class="frame" style="display: none;">
+    <div>❤️</div>
+    <div>I love you !!! <3</div> <!-- Kích thước chữ đã được chỉnh sửa -->
+</div>
+
+<script>
+    function showYES() {
+        document.querySelector('.frame').style.display = 'block';
+    }
+    let yesButton = document.getElementById("yesButton");
+    let message = document.getElementById('message');
+    let noButton = document.getElementById("noButton");
+
+    yesButton.addEventListener("click", () => {
+        message.classList.add('show');
+    });
+
+    noButton.addEventListener("mouseover", () => {
+        let randomX = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+        let randomY = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+        noButton.style.left = `${randomX}px`;
+        noButton.style.top = `${randomY}px`;
+    });
+</script>
+</body>
+</html>

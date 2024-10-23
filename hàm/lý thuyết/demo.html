@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="num">
+<button onclick="isPrime()">check</button>
+<button onclick="show()">show</button>
+<button onclick="showLessNum">show less num</button>
+<script>
+<!--    KT 1 số có phải là số nguyên tố hay ko-->
+function isPrime() {
+    let isPrime=true
+    let num= document.getElementById('num').value
+    for( let i=2; i<= Math.sqrt(num); i++){
+        if (num% i===0){
+            isPrime=false
+            break
+        }
+    }
+    if (isPrime){
+        alert(`${num} là số nguyên tố`)
+    }else {
+        alert(num + " ko phải số nguyên tố")
+    }
+}
+//thêm vào nút show
+function show(){
+    let countPrime= document.getElementById('num').value
+    let num=2
+    let count=0
+    let isPrime
+    let result= "";
+    while (count< countPrime){
+        isPrime=true
+        for( let i=2; i<= Math.sqrt(num); i++){
+            if (num% i===0){
+                isPrime=false
+                break
+            }
+        }
+        if (isPrime){
+            result+= `${num} là số nguyn tố <br>`
+            count ++
+        }
+        num++
+    }
+    document.getElementById("result").innerHTML = result
+}
+function showLessNum(){
+    let maxPrime= +document.getElementById("num").value
+    for (let num=2; num<maxPrime; num++){
+        if (num% i===0){
+            return false
+        }
+    }
+}
+</script>
+</body>
+</html>

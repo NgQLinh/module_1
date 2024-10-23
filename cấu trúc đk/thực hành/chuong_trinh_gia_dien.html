@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình giá điện</title>
+</head>
+<body>
+<script>
+  function tinhHoaDonTienDien(uníts){
+    let tongTienDien= 0
+
+    // giá tiền 0-50: 1806 VND
+    // giá tiền 51-100: 1866 VND
+    // giá tiền 101-200: 2167 VND
+    // giá tiền 201-300: 2729 VND
+    // giá tiền 301-400: 3050 VND
+    // giá tiền 401 trở lên : 3151 VND
+
+    if (uníts<=50){
+      tongTienDien= uníts*1806;
+    }else if (uníts<=100){
+      tongTienDien= 50*1806 + (uníts-50)*1866;
+    }else if (uníts<=200){
+      tongTienDien= 50*1806+ 50*1866+(uníts-100)*2167;
+    }else if (uníts<=300){
+      tongTienDien= 50*1806+ 50*1866+ 50*2167+ (uníts-200)*2729;
+    }else if (uníts<=400){
+      tongTienDien= 50*1806+ 50*1866+ 50*2167+ 50*2729+ (uníts-300)*3050;
+    }else {
+      tongTienDien= 50*1806+ 50*1866+ 50*2167+ 50*2729+ 50*3050+ (uníts-400)*3151;
+    }
+    return tongTienDien;
+  }
+  let nhapSoTien= parseInt(+(prompt("nhập số tiền điện đã sử dụng: ")))
+  let bill= tinhHoaDonTienDien(nhapSoTien);
+  alert(`tổng giá điện phải trả là: ${bill}VND`)
+</script>
+</body>
+</html>

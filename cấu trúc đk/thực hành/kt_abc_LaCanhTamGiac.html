@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm tra xem a,b,c là cạnh của một tam giác</title>
+</head>
+<body>
+<script>
+  function kiemTraTamGiac(a, b, c) {
+    if (a > 0 && b > 0 && c > 0) {
+      if (a + b > c && b + c > a && a + c > b) {
+        return "a, b, c là cạnh của một tam giác.";
+      } else {
+        return "a, b, c không thể là cạnh của một tam giác.";
+      }
+    } else {
+      return "Các cạnh ph\n"+
+              "  let a= parseFloat(prompt(\"nhập số thải lớn hơn 0.";
+    }
+  }
+  let a= parseFloat(prompt("nhập số thực a:" ))
+  let b= parseFloat(prompt("nhập số thực b: "))
+  let c= parseFloat(prompt("nhập số thực c: "))
+  let result= kiemTraTamGiac(a,b,c)
+  alert(result)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tuổi</title>
+</head>
+<body>
+<script>
+  function age(a) {
+    return a > 0 && a < 120
+  }
+  let aInput= parseInt(+prompt("mòiw nhập tuổi của bạn: "));
+  let a= parseInt( aInput)
+  if (age(a)){
+    alert("tuổi hợp lệ");
+  }else {
+    alert("tuổi ko hợp lệ")
+  }
+</script>
+</body>
+</html>

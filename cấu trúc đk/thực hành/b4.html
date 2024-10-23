@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực học sinh</title>
+</head>
+<body>
+<script>
+  let diemKiemTra= parseInt(+prompt("nhập điểm KT"))
+  let diemGiuaKy= parseInt(+prompt("nhập điểm GK"))
+  let diemCuoiky= parseInt(+prompt("nhập điểm CK"))
+  diemTB= (diemKiemTra+ diemGiuaKy+ diemCuoiky)/3
+  if (diemTB>=8){
+    alert("giỏi")
+  }else if(diemTB>=6.5 && diemTB < 8){
+    alert("khá")
+  }else if(diemTB >= 4.5 && diemTB < 6){
+    alert("trung bình")
+  }else {
+    alert("kém")
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra Tham Số</title>
+
+</head>
+<body>
+
+    <h1>Kiểm Tra Tham Số</h1>
+    <label for="inputA">Nhập tham số thứ nhất (a): </label>
+    <input type="number" id="inputA" required>
+    <br><br>
+    <label for="inputB">Nhập tham số thứ hai (b): </label>
+    <input type="number" id="inputB" required>
+    <br><br>
+    <button onclick="kiemTraThamSo()">Kiểm tra</button>
+
+    <script>
+        function kiemTraThamSo() {
+            // Lấy giá trị từ các ô nhập
+            let a = parseFloat(document.getElementById("inputA").value);
+            let b = parseFloat(document.getElementById("inputB").value);
+
+            if (a > b) {
+                alert("Tham số thứ nhất lớn hơn tham số thứ hai.");
+            } else {
+                let tong = a + b;
+                alert("Tổng của hai tham số là: " + tong);
+            }
+        }
+</script>
+</body>
+</html>

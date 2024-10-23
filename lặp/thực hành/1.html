@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="heartCanvas" width="400" height="400"></canvas>
+<script>
+  const canvas = document.getElementById('heartCanvas');
+  const ctx = canvas.getContext('2d');
+
+  // Hàm vẽ hình trái tim
+  function drawHeart() {
+    ctx.beginPath();
+    ctx.moveTo(200, 250);
+    ctx.bezierCurveTo(200, 150, 100, 150, 100, 250);
+    ctx.bezierCurveTo(100, 350, 200, 350, 200, 250);
+    ctx.bezierCurveTo(200, 350, 300, 350, 300, 250);
+    ctx.bezierCurveTo(300, 150, 200, 150, 200, 250);
+    ctx.fillStyle = 'red';
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  drawHeart();
+</script>
+</body>
+</html>

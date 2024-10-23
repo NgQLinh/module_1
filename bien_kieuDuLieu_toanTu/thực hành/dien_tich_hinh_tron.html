@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>diê tích hình tròn</title>
+</head>
+<body>
+<script>
+  function tinhDienTichHinhTron(banKinh) {
+    return Math.PI* Math.pow(banKinh);
+  }
+  const banKinh= parseFloat(+prompt("nhập bán kính: "));
+  if (!isNaN(banKinh) && banKinh>0){
+    const dientich= tinhDienTichHinhTron(banKinh);
+    console.log("diện tích hình tròn có bán kính ${banKinh} là: ${dientich.toFixed(banKinh)}");
+  }else {
+    console.log("vui lòng nhập bán kính hợp lệ");
+  }
+
+</script>
+
+</body>
+</html>

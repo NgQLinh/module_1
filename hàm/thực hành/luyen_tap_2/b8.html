@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function daoNguocMang(arr) {
+        // kiểm tra nếu arr ko phải là mảng hoặc mảng rỗng
+        if (!Array.isArray(arr) || arr.length===0){
+            return"vui lòng nhập vào 1 mảng số nguyên hợp lệ"
+        }
+        // đảo ngược mảng
+        return arr.reverse()
+    }
+    // nhập mảng từ người dùng
+    let input = prompt("nhập các số nguyên cách nhau bằng dấu phẩy (VD: 1, 2, 3, 4, 5,....")
+    let mangSoNguyen = input.split(',').map(Number); // chuyển đổi thành mảng số nguyên
+    let mangDaoNguoc = daoNguocMang(mangSoNguyen)
+    document.write("Mảng sau khi đảo ngược: ", mangDaoNguoc)
+</script>
+</body>
+</html>

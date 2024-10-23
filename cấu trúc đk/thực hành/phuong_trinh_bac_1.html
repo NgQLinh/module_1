@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 1</title>
+</head>
+<body>
+<script>
+  function solveLinearEquation(a,b){
+    if (a===0){
+      return "Phương trình không hợp lệ"
+    }else{
+      return -b / a;
+    }
+  }
+  let a= +prompt('nhập số a')
+  let b= +prompt('nhập số b')
+  let solution= solveLinearEquation(a, b);
+  alert(`Giá trị của phương trình bậc 1 là: ${solution}`)
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // đăng nhập
+  // cần nhập username
+  //nếu username ồn tại-> nhập password->kt passworg
+  //nếu username ko tồn tại-> nhập lại
+
+  let username="";
+  let password="";
+  while (true){  // vòng lặp vô tận
+    username=prompt("nhập username");
+    if (username !=="haitt"){
+      continue;
+    }
+    password= prompt("nhập password");
+    if(password==="abc"){
+      alert("đăng nhập thành công")
+      break
+    }
+  }
+</script>
+</body>
+</html>

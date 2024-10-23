@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a= +prompt("nhập số lượng đẻ chạy fibonacci")
+    function fibonacci(n){
+        let innput=[0, 1]
+        for (let i=2; i<n; i++){
+            innput[i]= innput[i-1]+ innput[i-2]
+        }
+        return innput.slice(0, n)
+    }
+    let n=a
+    document.write(fibonacci(n))
+</script>
+</body>
+</html>

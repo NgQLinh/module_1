@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr1=[1, 4, 5, 7, 9]
+  let arr2=[0]
+  let arr3=[3,3]
+  let arr4=[9, 7, 5, 3]
+  let arr5=[1, 2, 3, 2]
+
+  function isMonotonous(sequence) {
+    // Kiểm tra kích thước mảng
+    if (sequence.length <= 1) {
+      return true; // Mảng có 0 hoặc 1 phần tử là monotonous
+    }
+
+    let isIncreasing = true;
+    let isDecreasing = true;
+
+    for (let i = 1; i < sequence.length; i++) {
+      if (sequence[i] > sequence[i - 1]) {
+        isDecreasing = false; // Nếu có phần tử lớn hơn phần tử trước, không phải giảm
+      } else if (sequence[i] < sequence[i - 1]) {
+        isIncreasing = false; // Nếu có phần tử nhỏ hơn phần tử trước, không phải tăng
+      } else {
+        return false; // Nếu có phần tử bằng nhau, không phải monotonous
+      }
+    }
+
+    return isIncreasing || isDecreasing; // Trả về true nếu là dãy tăng hoặc dãy giảm
+  }
+
+  // Ví dụ sử dụng
+  document.write(isMonotonous(arr1) + '<br>'); // Kết quả: true
+  document.write(isMonotonous(arr2) + '<br>'); // Kết quả: true
+  document.write(isMonotonous(arr3) + '<br>'); // Kết quả: false
+  document.write(isMonotonous(arr4) + '<br>'); // Kết quả: true
+  document.write(isMonotonous(arr5) + '<br>'); // Kết quả: false
+
+
+</script>
+</body>
+</html>

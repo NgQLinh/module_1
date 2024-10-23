@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+// cú pháp 1: let arr= [abcdxyz]
+// cú phấp 2: let arr= new Array[abcdxyz]
+
+    let arr= [1,2,4,"linh", true,undefined,null];
+//let arr = new Array(5,6,7,8)
+
+//console.log(Array.isArray(arr))
+//console.log(arr)
+    let lenght=arr.length
+// for i hay là for index
+    for (let i= lenght -1; i>=0; i--){ // duyệt mảng ngược lại
+        document.write(`phần thử thứ ${i} là ${arr[i]} <br>`)
+    }
+// for-in và for-of
+for (let i in arr){
+    document.write(`phần thử thứ ${i} là ${arr[i]} <br>`)
+}
+for(let item of arr){
+    document.write(`phần thử thứ ${i} là ${arr[i]} <br>`)
+}
+// cách khai ba, duyêt,...
+// push: thêm vào cối mảng
+// unshift: thêm vào đàu mảng
+// pop: xoá phàn tử cuối mảng
+//shift: xoá đầu mảng
+//splice(index,number): xoá vị trí bất kì
+//splice(index,0,item1,item2,...): thêm vào vị trí bát kỳ
+// reverse: đảo ngược mảng
+// sort: sắp xếp
+</script>
+</body>
+</html>

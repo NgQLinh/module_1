@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  function searchElement(a, n) {
+    const uniqueValues= [...new Set(a)]
+    uniqueValues.sort((x, y) => y-x)
+    if (n<= uniqueValues.length){
+      return uniqueValues[n-1]
+    }else {
+      return -1
+    }
+  }
+  document.write(searchElement([6, 5, 4, 3, 2, 1], 1))
+  document.write(searchElement([100, 100, 99, 98, 102, 103], 4))
+  document.write(searchElement([1, 2, 3, 4, 5], 10))
+
+</script>
+</body>
+</html>

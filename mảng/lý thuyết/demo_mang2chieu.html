@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 2 chiều</title>
+</head>
+<body>
+<script>
+<!--    -->
+let arr= ["ss24 ultra", "Iphone16"," Xiaomi 14" ];
+
+let arr2=[["ss24 ultra", 20000000, 2024], ["Iphone 16", 40000000, 2024]]
+let result= "<table border='1' widh='400p'>"
+result += "<tr>"
+result += "<th>tên sản phẩm</th>"
+result += "<th>giá sản phẩm</th>"
+result += "<th>năm sản suất</th>"
+result += "</tr>"
+for (let i=0; i<arr2.length;i++){
+    result+= "<tr>"
+    for (let j=0;j<arr2[i].length;j++){
+        result += '<td> ${[i],[j]}</td>'
+
+    }
+    result+= "<tr>"
+}
+    result +="</table>"
+document.write(result)
+</script>
+</body>
+</html>

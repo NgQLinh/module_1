@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Management</title>
+    <style>
+        tr {
+            height: 50px;
+        }
+        tr:nth-child(odd) {
+            background-color: #f4f4f4;
+        }
+        td {
+            text-align: center;
+            width: 200px;
+        }
+        button {
+            background-color: forestgreen;
+            color: white;
+            width: 70px;
+            height: 30px;
+            border: none;
+            border-radius: 5%;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 400px; height: 600px; background-color: #f4f4f4;"></div>
+<div style="padding-top: 40px; padding-left: 40px">
+    <input type="text" id="search" placeholder="Search...">
+    <input type="text" id="productAdd" style="width: 300px; height: 30px" placeholder="Add product...">
+    <button id="add">Add</button>
+</div>
+<div id="result" style="padding-top: 20px;"></div>
+<script>
+    let products = ['nokia', 'iphone', 'samsung', 'xiaomi', 'oppo'];
+
+    function display(products) {
+        let result = "<table>";
+        for (let i = 0; i < products.length; i++) {
+            result += "<tr>";
+            result += `<td>${products[i]}</td>`;
+            result += `<td><button onclick='editProduct(${i})'>Edit</button></td>`;
+            result += `<td><button onclick='deleteProduct(${i})'>Delete</button></td>`;
+            result += "</tr>";
+        }
+        result += "</table>";
+        document.getElementById("result").innerHTML = result;
+    }
+
+    document.getElementById("add").addEventListener("click", function () {
+        let productAdd = document.getElementById("productAdd").value;
+        if (productAdd.length > 5 && productAdd.length < 100) {
+            products.push(productAdd);
+            display(products);
+            document.getElementById("productAdd").value = "";
+            alert("Product added successfully");
+        } else {
+            alert("Product name must be between 5 and 100 characters");
+        }
+    });
+
+    document.getElementById("search").addEventListener("input", function () {
+        let search = document.getElementById("search").value.toLowerCase();
+        let result = products.filter(product => product.toLowerCase().includes(search));
+        display(result);
+    });
+
+    function deleteProduct(i) {
+        let isDelete = confirm(`Are you sure you want to delete the product ${products[i]}?`);
+        if (isDelete) {
+            products.splice(i, 1);
+            display(products);
+            alert("Deleted successfully");
+        }
+    }
+
+    function editProduct(i) {
+        let newName = prompt("Edit product name:", products[i]);
+        if (newName && newName.length > 5 && newName.length < 100) {
+            products[i] = newName;
+            display(products);
+        } else if (newName) {
+            alert("Product name must be between 5 and 100 characters");
+        }
+    }
+
+    display(products);
+</script>
+</body>
+</html>

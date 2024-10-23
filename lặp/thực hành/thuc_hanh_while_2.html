@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let i=1
+  let colors=['red', 'green', 'blue', 'purple']
+  let colorsIndex=0
+  while (i<=100){
+    document.write(`<hr style="width: ${i}px; height: 10px; background-colos: 'black' ${colors[colorsIndex]};">`);
+    i++
+    colorsIndex= (colorsIndex+1)% colors.length
+  }
+</script>
+</body>
+</html>

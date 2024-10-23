@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //hàm tăng giá trị đối số lên 1
+    function tangGiaTri(so){
+        return so+1
+    }
+    function hienThiKetQua() {
+        let soInput= document.getElementById('soInput').value //ấy giá trị từ ô nhập
+        let so= parseInt(soInput) // chuyển đổi giá trị thành số
+        if (!isNaN(so)){  ;// kiểm tra nếu giá trị hợp lệ
+            let ketQua=tangGiaTri(so)
+            document.getElementById('ketQua').innerText=`giá trị sau khi tăng: ${ketQua}`
+        }else {
+            document.getElementById('ketQua').innerText='vui lòng nhập 1 số hợp lệ'
+        }
+    }
+
+</script>
+
+</body>
+<h1>Tăng giá trị</h1>
+<label>nhập giá trị: </label>
+<input type="number" id="soInput" />
+<button onclick="hienThiKetQua()">Tăng giá trị</button>
+<p id="ketQua">
+</p>
+</html>

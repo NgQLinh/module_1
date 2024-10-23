@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let num= parseInt(prompt("nhập 1 số ( nhập -1 đẻ kết thúc): "))
+  let tong=0
+  while (true){
+    tong += parseInt(num)
+    if (num===-1){
+      break;
+    }
+    alert(`giá trị nhập vào: ${num}`)
+    tong += num
+  }
+  alert(`tổng c giá trị đã nhập là: ${tong}`)
+</script>
+</body>
+</html>
