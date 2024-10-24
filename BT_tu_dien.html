@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="le">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<label >Nhập từ
+  <input type="text" id="keyword" value="">
+</label>
+<button onclick="check()">Dịch</button>
+
+<p id="result"></p>
+
+<script>
+  function check() {
+    const en = ['hi', 'apple', 'orange', 'banana']
+    const vi = ['chào', 'táo', 'cam', 'chuối']
+
+    // b1 Lấy giá trị người dùng tìm kiếm
+    const keyword = document.getElementById('keyword').value;
+
+    // b2 Tìm kiếm giá trị người dùng nhập vào trong mảng en
+    let index = -1;
+
+    for (let i = 0; i < en.length; i++) {
+      if (en[i] === keyword) {
+        index = i;
+        break;
+      }
+    }
+
+    if (index === -1) {
+      document.getElementById('result').innerHTML = 'No data';
+    } else {
+      document.getElementById('result').innerHTML = vi[index];
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // yêu cầu người dùng nhập chuỗi
+    let chuoi= prompt("nhập vào 1 chuỗi: ")
+    // tách chuỗi thành mảng từ
+    let mangTu=chuoi.trim().split(/\s+/); // tách theo khoảng trắng
+    // đếm số từ
+    let soTu= mangTu.length;
+    // hiển thị kết quả
+    document.write("số từ trong chuỗi: " + soTu)
+</script>
+</body>
+</html>

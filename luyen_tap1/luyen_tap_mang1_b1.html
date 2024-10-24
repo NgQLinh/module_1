@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr=[]
+  for (let i=0; i<10; i++){
+    let num= parseInt(prompt(`nhập phần thử thứu ${i+1}: `))
+    arr.push(num)
+  }
+  let count= arr.filter(x => x >= 10).length;
+  document.write(`có ${count } số nguyên tố lớn hơn hoặc bằng 10`)
+</script>
+</body>
+</html>

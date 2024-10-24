@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let input= prompt(" nhấp số")
+  let number=[-3, 5, 1, 3, 2, 10]
+  let index= -1
+  for (let i=0; i<number.length; i++){
+    if (input==number[i]){
+      index=1
+    }
+  }
+  if (index>-1){
+    alert("input"+ input+ "found at"+ index)
+  }else {
+    alert("input"+ input+ "not found")
+  }
+</script>
+</body>
+</html>

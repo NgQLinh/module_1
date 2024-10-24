@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function nhapMang(){
+    let arr=[]
+    let soPhanTu= +prompt("nhập số lượng phàn tử trong mảng: ")
+    for (let i=0; i< soPhanTu; i++){
+      let phanTu= parseInt(prompt(`nhập số phần tử thứ ${i+1}: `))
+      arr.push(phanTu)
+    }
+    //hàm để đảo ngược
+    function mangDaoNguoc(arr) {
+        let mangDaoNguoc= []
+        for (let i= arr.length-1; i>=0; i--){
+            mangDaoNguoc.push(arr[i])
+        }
+        return mangDaoNguoc
+    }
+    //mảng đảo ngược
+      let reversedArray= mangDaoNguoc(arr)
+      document.write('Mảng ban đầu: ' + arr.join(', '))
+      document.write('<br> Mảng sau khi đảo ngược: ', reversedArray.join(', '))
+  }
+  nhapMang()
+</script>
+</body>
+</html>

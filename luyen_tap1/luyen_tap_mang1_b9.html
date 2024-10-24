@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr1=[]
+  let arr2=[]
+  // khởi tạo mản 1
+  for (let i=0; i<10; i++){
+    let so=parseInt(prompt(`Nhập số nguyên thứ ${i+1} cho mảng 1: `), 10)
+    arr1.push(so)
+  }
+  // khởi tạo mảng 2
+  for (let i=0; i<10; i++) {
+    let so = parseInt(prompt(`Nhập số nguyên thứ ${i + 1} cho mảng 1: `), 10)
+    arr2.push(so)
+  }
+  // khởi tạo mảng 3 và nối mảng 1 và 2
+  let arr3= arr1.concat(arr2)
+  // hiển thị mảng 3
+  document.write("Mảng 3( nối từ mảng 1 và 2): ")
+  document.write(arr3.join(", "))
+
+</script>
+</body>
+</html>

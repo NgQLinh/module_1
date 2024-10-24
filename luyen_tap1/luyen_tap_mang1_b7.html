@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // khởi tạo mảng và nhập vào 10 phần tử
+  let mangSoNguyen=[];
+  for (let i=0; i<10; i++){
+    let so=parseInt(prompt(`Nhập số nguyên thứ ${i+1}: `), 10)
+    mangSoNguyen.push(so)
+  }
+  // nhập vào số nguyên V
+  let V=parseInt(prompt("Nhập số nguyên V: "), 10)
+  // kiểm tra xem V có trong mảng không và xoá nếu có
+  let index = mangSoNguyen.indexOf(V)
+  if (index!==-1){
+    // dịch các phần tử bên phải V sang trái
+    for (let i=index; i<mangSoNguyen.length-1; i++){
+      mangSoNguyen[i]= mangSoNguyen[i+1]
+    }
+    // gán 0 cho phần tử cuối cùng
+    mangSoNguyen[mangSoNguyen.length-1]=0
+    document.write(`${V} đ đuọc xoá khỏi mảng<br>`)
+  }else {
+    document.write(`${V} không có trong mảng<br>`)
+  }
+  document.write(" MẢng sau khi xoá: ")
+  document.write(mangSoNguyen.join(", "))
+</script>
+</body>
+</html>

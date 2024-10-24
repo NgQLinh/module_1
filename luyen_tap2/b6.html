@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function thayTheKyTu() {
+        let input= prompt("nhập vào 1 chuõi ký tự: ")
+        // chuyển chuỗi thành mảng ký tự
+        let mangKyTu= input.split('')
+        // duyệt qua mảng và thay thế ký tự '-' bằng'_'
+        for (let i=0; i<mangKyTu.length; i++){
+            if (mangKyTu[i]==='-'){
+                mangKyTu[i]='_'
+            }
+        }
+        // chuỗi mảng trở lại thành chuỗi
+        let ketQua=mangKyTu.join('')
+        document.write("chuỗi sau khi thay thế: ", ketQua)
+    }
+    thayTheKyTu()
+</script>
+</body>
+</html>
